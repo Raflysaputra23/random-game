@@ -2,8 +2,9 @@
 #include <ctime>
 using namespace std;
 
-
-
+void teksComputer(string computer, string teks){
+    cout << computer << " : " << '"' << teks << '"';
+}
 
 int main(){
     string nama;

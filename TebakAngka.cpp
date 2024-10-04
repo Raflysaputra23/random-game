@@ -11,7 +11,6 @@ int main(){
     srand(time(0));
     random = 1 + rand() % 100;
 
-    int a;
     string nama;
     string computer;
 
