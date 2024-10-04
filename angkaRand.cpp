@@ -1,6 +1,6 @@
 #include <ctime>
 #include <cstdlib>
-#include "fungsi.h"
+#include "deklarasi.h"
 using namespace std;
 
 int angkaRand(int rentang) {

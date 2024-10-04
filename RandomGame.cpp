@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fungsi.h"
+#include "deklarasi.h"
 using namespace std;
 
 
