@@ -9,14 +9,13 @@ int main(){
          << "\t" "\t" "\t" "\t" << "Selamat Datang" << endl
          << "\t" "\t" "\t" << "       Di Game Kehokian" << endl
          << "=========================================================================" << endl << endl;
-
     cout << "Silahkan mau bermain game apa? (1: tebak angka, 2: suit jawa)" << endl;
     cout << "Pilih sesuai opsi dia atas" << endl;
     cout << "Pilih game: ";
     cin >> game;
     switch (game) {
         case 1:
-
+            tebakAngka();
         break;
         case 2:
             suitJawa();
