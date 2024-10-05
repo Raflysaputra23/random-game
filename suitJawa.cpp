@@ -2,9 +2,9 @@
 #include "deklarasi.h"
 using namespace std;
 
-int menang(string name, string user, string computer, string win) {
-	cout << user << "\t \t VS \t \t" << computer << endl
-		 << name << "\t \t \t \t" << "computer" << endl;
+int menang(string name, string user, string computer, string pilComputer, string win) {
+	cout << user << "\t \t VS \t \t" << pilComputer << endl
+		 << name << "\t \t \t \t" << computer << endl;
 	cout << endl << win << " menang" << endl;
 	return point(1, 'w');
 }
@@ -18,7 +18,7 @@ int menang(string name, string user, string computer, string win) {
 
 void draw(string name, string user, string computer) {
 	cout << user << "\t \t VS \t \t" << computer << endl
-		 << name << "\t \t \t \t" << "computer" << endl;
+		 << name << "\t \t \t \t" << computer << endl;
 	cout << endl << "Draw" << endl;
 }
 
@@ -35,16 +35,15 @@ string pilCom() {
 }
 
 
-void suitJawa() {
+void suitJawa(string user, string computer) {
 	int pil, pointU, pointC;
+	string pilihanComputer;
 	char cek;
-	string user, computer;
 	pointU = pointC = 0;
 	string suit[3] = {"kertas","batu","gunting"};
-	computer = pilCom();
+	pilihanComputer = pilCom();
 	
-	cout << "Selamat datang di game suit jawa" << endl
-		 << "Masukkan nama anda: ";  getline(cin >> ws, user);
+	cout << "Selamat datang di game suit jawa" << endl;
 
 	do {
 		cout << "Silahkan pilih sesuai opsi (1: kertas, 2: batu, 3: gunting)" << endl;
@@ -52,39 +51,39 @@ void suitJawa() {
 		cout << endl;
 		switch(pil) {
 			case 1:
-				if (computer == "batu"){
-					pointU += menang(user, suit[pil - 1], computer, user);
-				} else if(computer == "kertas"){
-					pointC += menang(user, suit[pil - 1], computer, "computer");
+				if (pilihanComputer == "batu"){
+					pointU += menang(user, suit[pil - 1], computer, pilihanComputer, user);
+				} else if(pilihanComputer == "kertas"){
+					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], computer);
+					draw(user, suit[pil - 1], pilihanComputer);
 				}
 			break;
 			case 2:
-				if (computer == "gunting"){
-					pointU += menang(user, suit[pil - 1], computer, user);
-				} else if(computer == "kertas"){
-					pointC += menang(user, suit[pil - 1], computer, "computer");
+				if (pilihanComputer == "gunting"){
+					pointU += menang(user, suit[pil - 1], computer,pilihanComputer, user);
+				} else if(pilihanComputer == "kertas"){
+					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], computer);
+					draw(user, suit[pil - 1], pilihanComputer);
 				}
 			break;
 			case 3:
-				if (computer == "kertas"){
-					pointU += menang(user, suit[pil - 1], computer, user);
-				} else if(computer == "batu"){
-					pointC += menang(user, suit[pil - 1], computer, "computer");
+				if (pilihanComputer == "kertas"){
+					pointU += menang(user, suit[pil - 1], computer, pilihanComputer, user);
+				} else if(pilihanComputer == "batu"){
+					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], computer);
+					draw(user, suit[pil - 1], pilihanComputer);
 				}
 			break;
 			default:
 				cout << "Masukkan opsi yang valid!!" << endl;
 		}
 		cout << endl;
-		computer = pilCom();
-		cout << "Point User: " << pointU << endl;
-		cout << "Point Computer: " << pointC << endl << endl;
+		pilihanComputer = pilCom();
+		cout << "Point " << user << ": " << pointU << endl;
+		cout << "Point " << computer << ": " << pointC << endl << endl;
 
 		cout << "Mau main lagi? (y/n): ";
 		cin >> cek;
