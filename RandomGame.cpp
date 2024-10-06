@@ -28,16 +28,19 @@ int main(){
     teksComputer(computer, "Game apa yang ingin kamu mainkan");
     cout << endl;
 
-    cout << "Silahkan mau bermain game apa? (1: tebak angka, 2: suit jawa)" << endl;
+    cout << "Silahkan mau bermain game apa? (1: tebak angka, 2: suit jawa, 3: ular tangga)" << endl;
     cout << "Pilih sesuai opsi dia atas" << endl;
     cout << "Pilih game: ";
     cin >> game;
     switch (game) {
         case 1:
-            tebakAngka(user, computer);
+            // tebakAngka(user, computer);
         break;
         case 2:
             suitJawa(user, computer);
+        break;
+        case 3:
+            ularTangga(user, computer);
         break;
         default:
         cout << "Pilih sesuai dengan opsinya!!" << endl;
