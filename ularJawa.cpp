@@ -5,14 +5,14 @@
 using namespace std;
 
 int lemparDadu() {
-	return angkaRand(5) + 1;
+	return angkaRand1(5) + 1;
 }
 
-void ularTangga(string user, string computer) {
+void ularJawa(string user, string computer) {
 	bool cek = true, game = 1;
-	int giliran = (angkaRand(2));
+	int giliran = (angkaRand1(2));
 	int posisi;
-	int u = 90, c = 90;
+	int u = 0, c = 0;
 	int j = 100, i = 100;
 
 

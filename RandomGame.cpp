@@ -26,21 +26,23 @@ int main(){
     teksComputer(computer, "Mari kita lihat siapa yang paling hebat dalam hal keberuntungan");
     cin.get();
     teksComputer(computer, "Game apa yang ingin kamu mainkan");
-    cout << endl;
-
-    cout << "Silahkan mau bermain game apa? (1: tebak angka, 2: suit jawa, 3: ular tangga)" << endl;
+    cout << endl << endl;
+    cout << "       ----------------------------------------------------" << endl
+         << "       | 1. Tebak Angka | | 2. Suit Jawa | | 3. Ular Jawa |" << endl
+         << "       ----------------------------------------------------" << endl;
     cout << "Pilih sesuai opsi dia atas" << endl;
     cout << "Pilih game: ";
     cin >> game;
+    cout << endl;
     switch (game) {
         case 1:
-            // tebakAngka(user, computer);
+            TebakAngka(user, computer);
         break;
         case 2:
             suitJawa(user, computer);
         break;
         case 3:
-            ularTangga(user, computer);
+            ularJawa(user, computer);
         break;
         default:
         cout << "Pilih sesuai dengan opsinya!!" << endl;
