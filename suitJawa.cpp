@@ -16,8 +16,8 @@ int menang(string name, string user, string computer, string pilComputer, string
 // 	return point(0, 'k');
 // }
 
-void draw(string name, string user, string computer) {
-	cout << user << "\t \t VS \t \t" << computer << endl
+void draw(string name, string user, string pilComputer, string computer) {
+	cout << user << "\t \t VS \t \t" << pilComputer << endl
 		 << name << "\t \t \t \t" << computer << endl;
 	cout << endl << "Draw" << endl;
 }
@@ -56,7 +56,7 @@ void suitJawa(string user, string computer) {
 				} else if(pilihanComputer == "kertas"){
 					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], pilihanComputer);
+					draw(user, suit[pil - 1], pilihanComputer, computer);
 				}
 			break;
 			case 2:
@@ -65,7 +65,7 @@ void suitJawa(string user, string computer) {
 				} else if(pilihanComputer == "kertas"){
 					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], pilihanComputer);
+					draw(user, suit[pil - 1], pilihanComputer, computer);
 				}
 			break;
 			case 3:
@@ -74,7 +74,7 @@ void suitJawa(string user, string computer) {
 				} else if(pilihanComputer == "batu"){
 					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
-					draw(user, suit[pil - 1], pilihanComputer);
+					draw(user, suit[pil - 1], pilihanComputer, computer);
 				}
 			break;
 			default:

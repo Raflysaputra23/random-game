@@ -12,7 +12,7 @@ void ularTangga(string user, string computer) {
 	bool cek = true, game = 1;
 	int giliran = (angkaRand(2));
 	int posisi;
-	int u = -1, c = -1;
+	int u = 90, c = 90;
 	int j = 100, i = 100;
 
 
@@ -24,32 +24,33 @@ void ularTangga(string user, string computer) {
 
 	do {
 		for(i = 100; i >= 1; i--) {
+
 			if (cek == true){
-				if (j == (u + 1) || j == (c + 1)){
+				if (j == u || j == c){
 					j--;
 				} else {
 					cout << j ;
 					j--;
 				}	
 
-				if (j == u){
+				if (j == (u - 1)){
 					cout << static_cast<char>(toupper(user[0])) ;
 				}
-				if (j == c){
+				if (j == (c - 1)){
 					cout << static_cast<char>(toupper(computer[0])) ;
 				}
 				cout << "\t";
 				
 				
 			} else {
-				if (j == u){
+				if (j == (u - 1)){
 					cout << static_cast<char>(toupper(user[0])) ;
 				}
-				if (j == c){
+				if (j == (c - 1)){
 					cout << static_cast<char>(toupper(computer[0])) ;
 				}
 				
-				if (j == u || j == c){
+				if (j == (u - 1) || j == (c - 1)){
 					j++;
 				} else {
 					j++;
@@ -58,14 +59,7 @@ void ularTangga(string user, string computer) {
 				cout << "\t";
 			}
 
-			if ((u + 1) == 100 || (c + 1) == 100) {
-				if ((u + 1) == 100) {
-					cout << user << " menang" << endl;
-				} else {
-					cout << computer << " menang" << endl;
-				}
-				break;
-			}
+			
 			if(i % 10 == 1 && i != 100) {
 				j -= 10;
 				cek = (cek) ? false : true;
@@ -74,8 +68,18 @@ void ularTangga(string user, string computer) {
 		}
 
 		cout << endl << endl;
-		cout << "Posisi " << user << " sekarang berada di posisi " << u + 1 << endl;
-		cout << "Posisi " << computer << " sekarang berada di posisi " << c + 1 << endl;
+		cout << "Posisi " << user << " sekarang berada di posisi " << u << endl;
+		cout << "Posisi " << computer << " sekarang berada di posisi " << c << endl;
+
+		if (u == 100 || c == 100){
+			if (u == 100) {
+				cout << endl << user << " menang" << endl;
+			} else {
+				cout << endl << computer << " menang" << endl;
+			}
+			game = 0;
+			break;
+		}
 
 		if (giliran == 1){
 			cout << endl
@@ -84,8 +88,13 @@ void ularTangga(string user, string computer) {
 			cin.get();
 			cin.get();
 			posisi = lemparDadu();
-			u += posisi;
-			cout << user << " mendapatkan angka " << posisi << endl;
+			u += posisi + 1;
+			cout << user << " mendapatkan angka " << posisi + 1 << endl;
+			if (u > 100) {
+				int selisih = (u - 100);
+				u = 100;
+				u -= selisih;
+			}
 			giliran = 2;
 		} else {
 			cout << endl
@@ -94,14 +103,20 @@ void ularTangga(string user, string computer) {
 			cin.get();
 			cin.get();
 			posisi = lemparDadu();
-			c += posisi;
-			cout << computer << " mendapatkan angka " << posisi << endl;
+			c += posisi + 1;
+			cout << computer << " mendapatkan angka " << posisi + 1 << endl;
+			if (c > 100) {
+				int selisih = (c - 100);
+				c = 100;
+				c -= selisih;
+			}
 			giliran = 1;
 		}
 		i = 100;
 		j = 100;
 		cout << endl << "Lanjut (1/0): ";
 		cin >> game;
+		cout << endl;
 	} while(game);
 
 }
