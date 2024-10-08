@@ -21,7 +21,6 @@ void ularJawa(string user, string computer) {
 		 << "Siapa yang sampai angka 100 ialah pemenangnya" << endl;
 	cout << endl;
 	cin.get();
-	cout << "Tanda ($) sebagai uler, dan tanda (#) sebagai tangga" << endl;
 	cout << endl;
 
 
