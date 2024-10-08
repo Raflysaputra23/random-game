@@ -53,7 +53,7 @@ void suitJawa(string user, string computer) {
 			case 1:
 				if (pilihanComputer == "batu"){
 					pointU += menang(user, suit[pil - 1], computer, pilihanComputer, user);
-				} else if(pilihanComputer == "kertas"){
+				} else if(pilihanComputer == "gunting"){
 					pointC += menang(user, suit[pil - 1], computer,pilihanComputer, computer);
 				} else {
 					draw(user, suit[pil - 1], pilihanComputer, computer);

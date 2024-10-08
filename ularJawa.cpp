@@ -20,6 +20,9 @@ void ularJawa(string user, string computer) {
 		 << "Disini kalian akan melempar dadu secara acak" << endl
 		 << "Siapa yang sampai angka 100 ialah pemenangnya" << endl;
 	cout << endl;
+	cin.get();
+	cout << "Tanda ($) sebagai uler, dan tanda (#) sebagai tangga" << endl;
+	cout << endl;
 
 
 	do {
