@@ -16,7 +16,7 @@ void ularJawa(string user, string computer) {
 	int j = 100, i = 100;
 
 
-	cout << "=== Selamat datang digame ular tangga ===" << endl
+	cout << "=== Selamat datang digame ular jawa ===" << endl
 		 << "Disini kalian akan melempar dadu secara acak" << endl
 		 << "Siapa yang sampai angka 100 ialah pemenangnya" << endl;
 	cout << endl;
@@ -114,7 +114,7 @@ void ularJawa(string user, string computer) {
 		}
 		i = 100;
 		j = 100;
-		cout << endl << "Lanjut (1/0): ";
+		cout << endl << "Lanjut (1/0) : ";
 		cin >> game;
 		cout << endl;
 	} while(game);
